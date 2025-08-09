@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML5 Assignment: Lists, Tables, Media, and Forms">
+    <title>Enhanced HTML5 Content & Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        header, section, footer {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 8px;
+        }
+        input, select, textarea, button {
+            padding: 8px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus, button:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HTML5 Content & Form Demonstration</h1>
+    <p>This page showcases <strong>lists</strong>, <strong>tables</strong>, <strong>media elements</strong>, and a fully functional HTML5 form .</p>
+</header>
+
+<section>
+    <h2>Favorite Programming Languages (List Example)</h2>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Top 3 Web Browsers (Table Example)</h2>
+    <table>
+        <caption>List of popular web browsers</caption>
+        <thead>
+            <tr>
+                <th>Browser</th>
+                <th>Developer</th>
+                <th>Initial Release</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Google Chrome</td>
+                <td>Google</td>
+                <td>2008</td>
+            </tr>
+            <tr>
+                <td>Mozilla Firefox</td>
+                <td>Mozilla Foundation</td>
+                <td>2002</td>
+            </tr>
+            <tr>
+                <td>Microsoft Edge</td>
+                <td>Microsoft</td>
+                <td>2015</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Embedded Media Example</h2>
+    <figure>
+        <img src="media/image.png" alt="Placeholder image showing sample content" style="max-width:100%; height:400px; width:250px; object-fit:cover; border-radius:8px;" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <figcaption style="display:none;">Image not found. A placeholder image embedded using HTML5 semantic elements.</figcaption>
+    </figure>
+    <audio controls>
+        <source src="media/audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <video controls width="400">
+        <source src="media/video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+</section>
+
+<section>
+    <h2>User Registration Form</h2>
+    <form id="registrationForm" action="#" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="John Doe" required minlength="3">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Account Details</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required pattern="[A-Za-z0-9]{5,}" title="At least 5 letters or numbers">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required minlength="6">
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required minlength="6">
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">--Select--</option>
+                <option value="ke">Kenya</option>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+            </select>
+
+            <label>
+                <input type="checkbox" name="newsletter" value="yes">
+                Subscribe to our newsletter
+            </label>
+        </fieldset>
+
+        <button type="submit">Register</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 HTML5 Assignment Demo. All rights reserved.</p>
+</footer>
+
+<script>
+    // Simple client-side validation to ensure the passwords match
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+        if (password !== confirmPassword) {
+            e.preventDefault();
+            alert("Passwords do not match.");
+        }
+    });
+</script>
+
+</body>
+</html>
